@@ -1,0 +1,65 @@
+<%- include('base'); -%>
+<body>
+  <div>
+    <div class="container">
+      <div class="box content">
+        <% if (resume) { %>
+          <% resume.forEach((element) => { %>
+            <div class="resume">
+            <h3><%= element.job_title %></h3>
+            <h4><%= element.company %></h4>
+            <h5><%= element.period %></h5>
+            <h5><%= element.location %></h5>
+            <ul><%- element.achievements %></ul>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <h3>Put your resume/cv here!</h3>
+        <% } %>
+      </div>
+
+      <div class="box header">
+        <div class="profile">
+          <div class="profile-photo">
+            <% if (image_path) { %>
+              <img src= <%= image_path %> />
+            <% } %>
+          </div>
+          <div class="profile-name">
+            <% if (name) { %>
+              <h1><%= name %></h1>
+            <% } else { %>
+              <h1>Full Name</h1>
+            <% } %>
+
+            <% if (summary) { %>
+              <h2>devops engineer, system and infrastructure</h2>
+            <% } else { %>
+              <h2>Profile Summary</h2>
+            <% } %>
+          </div>
+        </div>
+        <div class="profile-links">
+          <% if (links_icons) { %>
+            <% links_icons.forEach((element) => { %>
+              <div><a href="<%= element.link %>" target="blank"><i class="fa <%= element.icon %>" aria-hidden="true"></i></a></div>
+            <% }) %>
+          <% } else { %>
+            <% for (var i=0; i<4; i++) { %>
+              <div><a href="#" target="blank"><i class="fa fa-square" aria-hidden="true"></i></a></div>
+            <% } %>
+          <% } %>
+        </div>
+        <div class="profile-about-me">
+          <% if (about_me) { %>
+            <%- about_me %>
+          <% } else { %>
+            <p>About Me</p>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
