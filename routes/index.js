@@ -7,7 +7,11 @@ async function routes (fastify, options) {
   var DBConn = new DB(fastify)
 
   fastify.setNotFoundHandler({}, function (request, reply) {
-    reply.send('Page Not Found!')
+    reply
+      .code(404)
+      .view('page-not-found', {
+        title: 'Error 404, Page not found'
+      })
   })
 
   fastify.get('/', async (request, reply) => {
