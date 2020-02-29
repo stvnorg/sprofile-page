@@ -1,12 +1,10 @@
-const Path = require('./libs/path')
-var path = new Path()
+const path = require('path')
 
 async function routes (fastify, options) {
   fastify.get('/assets/*', function (request, reply) {
     var url = request.req.url.split('/')
     const fs = require('fs')
-    console.log(path.getAssetsDirPath() + url.slice(2, url.length).join('/'))
-    const stream = fs.createReadStream(path.getAssetsDirPath() + url.slice(2, url.length).join('/'))
+    const stream = fs.createReadStream(path.join(__dirname, 'assets/') + url.slice(2, url.length).join('/'))
     if (url.includes('fonts')) {
       reply.type('application/font-woff2').send(stream)
     } else if (url.includes('css')) {
