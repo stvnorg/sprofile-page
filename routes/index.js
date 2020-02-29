@@ -8,6 +8,10 @@ var path = new Path()
 async function routes (fastify, options) {
   var DBConn = new DB(fastify)
 
+  fastify.setNotFoundHandler({}, function (request, reply) {
+    reply.send('Page Not Found!')
+  })
+  
   fastify.get('/', async (request, reply) => {
     var profile = await DBConn.getProfileData()
     var resume = await DBConn.getResumeData()
@@ -20,6 +24,7 @@ async function routes (fastify, options) {
       about_me: profile.about_me,
       resume: resume
     })
+    return (reply.code(204))
   })
 }
 

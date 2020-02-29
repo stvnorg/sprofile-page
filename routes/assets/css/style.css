@@ -65,12 +65,14 @@ body {
 .profile-name h1 {
   color: #eee;
   font-size: 1.25rem;
+  font-weight: 400;
 }
 
 .profile-name h2 {
   padding: 5px;
-  color: #aaa;
+  color: #eee;
   font-size: 0.8rem;
+  font-weight: 200;
 }
 
 .profile-photo img {
