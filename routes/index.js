@@ -1,9 +1,7 @@
 const DB = require('./libs/db')
 const Parser = require('./libs/parser')
-const Path = require('./libs/path')
 
 var parser = new Parser()
-var path = new Path()
 
 async function routes (fastify, options) {
   var DBConn = new DB(fastify)
@@ -15,7 +13,7 @@ async function routes (fastify, options) {
   fastify.get('/', async (request, reply) => {
     var profile = await DBConn.getProfileData()
     var resume = await DBConn.getResumeData()
-    reply.view(path.getIndexPageTemplatePath(), {
+    reply.view('index', {
       title: profile.page_title,
       image_path: profile.image_path,
       name: profile.name,

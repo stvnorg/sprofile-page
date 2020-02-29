@@ -1,13 +1,15 @@
 const fastify = require('fastify')({ logger: true })
 
+fastify.register(require('fastify-postgres'), {
+  connectionString: process.env.DATABASE_URL
+})
+
 fastify.register(require('point-of-view'), {
   engine: {
     ejs: require('ejs')
-  }
-})
-
-fastify.register(require('fastify-postgres'), {
-  connectionString: process.env.DATABASE_URL
+  },
+  templates: './routes/templates',
+  includeViewExtension: true
 })
 
 fastify.register(require('./routes/index'))
