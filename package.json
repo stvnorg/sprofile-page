@@ -16,6 +16,7 @@
     "js-yaml": "^3.13.1",
     "pg": "^7.18.2",
     "point-of-view": "^3.7.1",
+    "supertest": "^4.0.2",
     "tap": "^14.10.6"
   },
   "scripts": {

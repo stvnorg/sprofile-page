@@ -156,6 +156,9 @@ body {
     margin-top: 160%;
     padding-top: 50px;
   }
+  .profile-photo img {
+    opacity: 0.6;
+  }
   .profile-links {
     padding-top: 10px;
     font-size: 1.6em;
@@ -181,6 +184,9 @@ body {
   }
   .resume {
     padding: 30px 10px;
+  }
+  .profile-photo img {
+    opacity: 0.8;
   }
   .profile-links {
     width: 50%;

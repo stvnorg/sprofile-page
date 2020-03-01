@@ -1,11 +1,31 @@
 const Fastify = require('fastify')
+const path = require('path')
 const fs = require('fs')
+const Database = require(path.join(__dirname, 'libs/db'))
 
 function buildFastify () {
   const fastify = Fastify()
+  var DBConn = new Database(fastify)
 
-  fastify.get('/', function (request, reply) {
-    reply.send({ hello: 'world' })
+  fastify.register(require('fastify-postgres'), {
+    connectionString: process.env.DATABASE_URL
+  })
+
+  fastify.get('/connect-to-db', async function (request, reply) {
+    await DBConn.connectToDatabase()
+    return 0
+  })
+
+  fastify.get('/query-some-data', async function (request, reply) {
+    await DBConn.querySomeData()
+    return 0
+  })
+
+  fastify.get('/error-404', function (request, reply) {
+    reply
+      .code(404)
+      .header('Content-Type', 'text/html; charset=utf-8')
+      .send('<p>Error 404, Page not found</p>')
   })
 
   fastify.get('/assets/style.css', function (request, reply) {
@@ -16,6 +36,12 @@ function buildFastify () {
       .send(stream)
   })
 
+  fastify.get('/', function (request, reply) {
+    reply
+      .code(200)
+      .header('Content-Type', 'text/html; charset=utf-8')
+      .send('<html><body><div><p>Index Page</p></div></body></html>')
+  })
   return fastify
 }
 

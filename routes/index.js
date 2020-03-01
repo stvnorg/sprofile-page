@@ -1,10 +1,11 @@
-const DB = require('./libs/db')
-const Parser = require('./libs/parser')
+const path = require('path')
+const Database = require(path.join(__dirname, 'libs/db'))
+const Parser = require(path.join(__dirname, 'libs/parser'))
 
 var parser = new Parser()
 
 async function routes (fastify, options) {
-  var DBConn = new DB(fastify)
+  var DBConn = new Database(fastify)
 
   fastify.setNotFoundHandler({}, function (request, reply) {
     reply
