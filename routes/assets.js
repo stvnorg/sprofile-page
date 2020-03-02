@@ -1,7 +1,7 @@
 const path = require('path')
 
 async function routes (fastify, options) {
-  fastify.get('/assets/*', function (request, reply) {
+  fastify.get('/assets/*', (request, reply) => {
     var url = request.req.url.split('/')
     const fs = require('fs')
     const stream = fs.createReadStream(path.join(__dirname, 'assets/') + url.slice(2, url.length).join('/'))

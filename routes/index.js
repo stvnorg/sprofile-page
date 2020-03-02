@@ -7,7 +7,7 @@ var parser = new Parser()
 async function routes (fastify, options) {
   var DBConn = new Database(fastify)
 
-  fastify.setNotFoundHandler({}, function (request, reply) {
+  fastify.setNotFoundHandler({}, (request, reply) => {
     reply
       .code(404)
       .view('page-not-found', {
