@@ -8,8 +8,12 @@ tap.test('GET `/connect-to-db`', async (t) => {
   await supertest(fastify.server).get('/connect-to-db').expect(200)
 })
 
-tap.test('GET `/query-some-data`', async (t) => {
-  await supertest(fastify.server).get('/query-some-data').expect(200)
+tap.test('GET `/query-profile-table`', async (t) => {
+  await supertest(fastify.server).get('/query-profile-table').expect(200)
+})
+
+tap.test('GET `/query-resume-table`', async (t) => {
+  await supertest(fastify.server).get('/query-resume-table').expect(200)
 })
 
 tap.test('GET `/error-404` route', t => {

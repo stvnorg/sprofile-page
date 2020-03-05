@@ -5,20 +5,26 @@ const Database = require(path.join(__dirname, 'libs/db'))
 
 function buildFastify () {
   const fastify = Fastify()
+
   var DBConn = new Database(fastify)
 
   fastify.register(require('fastify-postgres'), {
-    connectionString: process.env.DATABASE_URL
+    connectionString: process.env.CI_DATABASE_ENDPOINT
   })
 
   fastify.get('/connect-to-db', async (request, reply) => {
     await DBConn.connectToDatabase()
-    return 0
+    return true
   })
 
-  fastify.get('/query-some-data', async (request, reply) => {
-    await DBConn.querySomeData()
-    return 0
+  fastify.get('/query-profile-table', async (request, reply) => {
+    await DBConn.queryTable('profile')
+    return true
+  })
+
+  fastify.get('/query-resume-table', async (request, reply) => {
+    await DBConn.queryTable('resume')
+    return true
   })
 
   fastify.get('/error-404', (request, reply) => {

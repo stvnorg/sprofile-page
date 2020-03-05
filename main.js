@@ -2,7 +2,7 @@ const fastify = require('fastify')({ logger: true })
 const path = require('path')
 
 fastify.register(require('fastify-postgres'), {
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_ENDPOINT
 })
 
 fastify.register(require('point-of-view'), {

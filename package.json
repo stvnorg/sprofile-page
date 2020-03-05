@@ -26,7 +26,8 @@
   "scripts": {
     "start": "node main",
     "lint": "npx eslint .",
-    "test": "node test/test.js"
+    "test": "node test/test.js",
+    "db:migrate": "npx sequelize-cli db:migrate"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.22.0",

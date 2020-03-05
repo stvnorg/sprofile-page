@@ -5,16 +5,12 @@ function Database (fastify) {
 Database.prototype.connectToDatabase = async function () {
   const client = await this.fastify.pg.connect()
   client.release()
-  return 0
 }
 
-Database.prototype.querySomeData = async function () {
+Database.prototype.queryTable = async function (table) {
   const client = await this.fastify.pg.connect()
-  const { row } = client.query(
-    'SELECT * FROM profile'
-  )
+  client.query('SELECT * FROM ' + table)
   client.release()
-  return row
 }
 
 module.exports = Database
