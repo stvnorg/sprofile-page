@@ -27,7 +27,11 @@
     "start": "node main",
     "lint": "npx eslint .",
     "test": "node test/test.js",
-    "db:migrate": "npx sequelize-cli db:migrate"
+    "db:migrate": "cd routes/models && npx sequelize-cli db:migrate",
+    "db:migrate:undo": "cd routes/models && npx sequelize-cli db:migrate:undo",
+    "db:migrate:undo:all": "cd routes/models && npx sequelize-cli db:migrate:undo:all",
+    "db:seed:all": "cd routes/models && npx sequelize-cli db:seed:all",
+    "db:seed:undo:all": "cd routes/models && npx sequelize-cli db:seed:undo:all"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.22.0",
