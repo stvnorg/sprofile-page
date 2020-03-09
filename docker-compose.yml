@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  reverse-proxy:
+    image: traefik:v2.1
+    command:
+      - "--providers.docker"
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: sprofile_admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sprofile_db
+    volumes:
+      - $HOME/psql_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    command: sh -c "npm run db:migrate && npm run db:seed:all && npm start"
+    depends_on:
+      - db
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: db
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: sprofile_admin
+      DATABASE_PASSWORD: password
+      DATABASE_NAME: sprofile_db
+      DATABASE_ENDPOINT: postgres://sprofile_admin:password@db/sprofile_db
+    labels:
+      - "traefik.http.routers.sprofile.rule=Host(`sprofile.docker.localhost`)"
+    restart: always

@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up (queryInterface, Sequelize) {
     const row = await queryInterface.rawSelect('resume', {
       where: {
         id: 1
