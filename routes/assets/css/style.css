@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: sans-serif;
 }
 
 .box {
@@ -13,20 +13,21 @@ body {
 }
 
 .content {
-  font-family: "Neuton", serif;
+  font-family: "Exo";
   padding: 20px 20px;
+  font-size: 0.9em;
 }
 
 .content h3, .content h4 {
   color: #31081F;
 }
 .content h5 {
-  color: #777;
+  color: #888;
 }
 
 .content ul {
   padding: 5px 10px;
-  font-size: 1em;
+  font-size: 0.84em;
 }
 
 .resume {
@@ -101,10 +102,10 @@ body {
 }
 
 .profile-about-me {
-  padding: 0 1.5em;
-  color: #ccc;
+  padding: 0 2em;
+  color: #eee;
   font-size: 0.8em;
-  font-family: "Merriweather", "sans-serif";
+  font-family: "Raleway", "sans-serif";
   text-align: left;
   line-height: 1.5em;
 }
@@ -125,7 +126,6 @@ body {
 
 .page-not-found h1 {
   padding: 3em 0;
-  font-family: "Merriweather", "sans-serif";
   font-size: 2em;
   color: white;
 }
@@ -153,7 +153,7 @@ body {
   .content {
     position: relative;
     clear: both;
-    margin-top: 160%;
+    margin-top: 164%;
     padding-top: 50px;
   }
   .profile-links {
@@ -176,7 +176,7 @@ body {
   .content {
     position: relative;
     clear: both;
-    margin-top: 240%;
+    margin-top: 250%;
     padding: 20px 10px;
   }
   .resume {
