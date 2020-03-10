@@ -32,5 +32,5 @@ services:
       DATABASE_NAME: sprofile_db
       DATABASE_ENDPOINT: postgres://sprofile_admin:password@db/sprofile_db
     labels:
-      - "traefik.http.routers.sprofile.rule=Host(`sprofile.docker.localhost`)"
+      - "traefik.http.routers.sprofile.rule=Host(`s.teven.me`)"
     restart: always
