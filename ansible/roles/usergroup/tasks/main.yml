@@ -1,0 +1,13 @@
+---
+- name: Add sprofile group
+  group:
+    name: "{{ group_name }}"
+    gid: 999
+    state: present
+
+- name: Add sprofile user
+  user:
+    name: "{{ user_name }}"
+    shell: /bin/bash
+    uid: 999
+    groups: sprofile,docker
