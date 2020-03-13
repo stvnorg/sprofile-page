@@ -8,6 +8,14 @@ body {
   font-family: sans-serif;
 }
 
+a {
+  color: #70A3CC;
+}
+
+a:hover {
+  color: blue;
+}
+
 .box {
   padding-bottom: 30px;
 }
@@ -93,7 +101,7 @@ body {
   font-size: 1.2em;
 }
 
-.profile-links  a {
+.profile-links a {
   color: white;
 }
 
