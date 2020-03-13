@@ -7,29 +7,29 @@
 
   roles:
     - docker
+    - role: usergroup
+      vars:
+        group_name: 'sprofile'
+        user_name: 'sprofile'
 
   tasks:
-  - name: Add sprofile group
-    group:
-      name: sprofile
-      gid: 999
-      state: present
-
-  - name: Add sprofile user
-    user:
-      name: sprofile
-      shell: /bin/bash
-      uid: 999
-      groups: sprofile,docker
-
   - name: git clone the project
     become: yes
     become_user: sprofile
     git:
       repo: 'https://github.com/stvnorg/sprofile-page.git'
       dest: "{{ project_directory }}"
+      force: yes
+    tags: deploy
+
+  - name: update the web image
+    shell: docker-compose build web
+    args:
+      chdir: "{{ project_directory }}"
+    tags: deploy
 
   - name: Deploy the app (docker-compose)
     shell: docker-compose up -d
     args:
       chdir: "{{ project_directory }}"
+    tags: deploy
