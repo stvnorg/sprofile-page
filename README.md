@@ -5,8 +5,9 @@ Work on-progress, missing the CMS feature
 
 ## Prequisites
   
-  `nodejs`
-  `postgresql`
+```nodejs
+   postgresql
+```
   
 ## Deployment for the Production Environment
 
@@ -14,12 +15,13 @@ Work on-progress, missing the CMS feature
 
 Before the deployment, make sure postgresql db is installed with the required permissions and export all the variables as below (to run the db:migrate and db:seed)
 
-  `$ export NODE_ENV='production'`
-  `$ export DATABASE_URL=<db_url>`
-  `$ export DATABASE_USERNAME=<username>`
-  `$ export DATABASE_PASSWORD=<password>`
-  `$ export DATABASE_NAME=<db_name>`
-  `$ export DATABASE_PORT=<db_port>`
+  ```$ export NODE_ENV='production'
+  $ export DATABASE_URL=<db_url>
+  $ export DATABASE_USERNAME=<username>
+  $ export DATABASE_PASSWORD=<password>
+  $ export DATABASE_NAME=<db_name>
+  $ export DATABASE_PORT=<db_port>
+  ```
 
 ### Packages Installation
 
@@ -74,7 +76,7 @@ For the Continous Integration part you need to export below variables:
   `$ npm run test`
 
 
-# LICENSE
+## License
 
 MIT License
 
