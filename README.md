@@ -5,9 +5,9 @@ Work on-progress, missing the CMS feature
 
 ## Prequisites
   
-```nodejs
+   ```nodejs
    postgresql
-```
+   ```
   
 ## Deployment for the Production Environment
 
@@ -57,11 +57,12 @@ If you have docker installed in your system, you can also run directly using doc
 
 For the Continous Integration part you need to export below variables:
 
-  `$ export CI_DATABASE_URL=localhost`
-  `$ export CI_DATABASE_USERNAME=<username>`
-  `$ export CI_DATABASE_PASSWORD=<password>`
-  `$ export CI_DATABASE_NAME=<db_name>`
-  `$ export CI_DATABASE_PORT=<db_port>`
+  ```$ export CI_DATABASE_URL=localhost
+  $ export CI_DATABASE_USERNAME=<username>
+  $ export CI_DATABASE_PASSWORD=<password>
+  $ export CI_DATABASE_NAME=<db_name>
+  $ export CI_DATABASE_PORT=<db_port>
+  ```
 
 ### Database Migration for the UnitTest
 
