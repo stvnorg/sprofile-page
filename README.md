@@ -1,5 +1,7 @@
 # sprofile-page
 
+[![dependencies Status](https://david-dm.org/stvnorg/sprofile-page/status.svg)](https://david-dm.org/stvnorg/sprofile-page)
+
 A simple one-page personal site. Built on FastifyJS. Started by [Steven Stevanus](https://github.com/stvnorg).
 Work on-progress, missing the CMS feature
 
