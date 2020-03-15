@@ -5,7 +5,8 @@ Work on-progress, missing the CMS feature
 
 ## Prequisites
   
-   ```nodejs
+   ```
+   nodejs
    postgresql
    ```
   
