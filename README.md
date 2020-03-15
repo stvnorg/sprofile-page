@@ -5,8 +5,8 @@ Work on-progress, missing the CMS feature
 
 ## Prequisites
   
-  nodejs
-  postgresql
+  `nodejs`
+  `postgresql`
   
 ## Deployment for the Production Environment
 
@@ -14,65 +14,67 @@ Work on-progress, missing the CMS feature
 
 Before the deployment, make sure postgresql db is installed with the required permissions and export all the variables as below (to run the db:migrate and db:seed)
 
-  $ export NODE_ENV='production'
-  $ export DATABASE_URL=<db_url>
-  $ export DATABASE_USERNAME=<username>
-  $ export DATABASE_PASSWORD=<password>
-  $ export DATABASE_NAME=<db_name>
-  $ export DATABASE_PORT=<db_port>
+  `$ export NODE_ENV='production'`
+  `$ export DATABASE_URL=<db_url>`
+  `$ export DATABASE_USERNAME=<username>`
+  `$ export DATABASE_PASSWORD=<password>`
+  `$ export DATABASE_NAME=<db_name>`
+  `$ export DATABASE_PORT=<db_port>`
 
-### Package Installation
+### Packages Installation
 
-  $ npm install
+  `$ npm install`
 
 ### Database Migration
 
-  $ npm run db:migrate
+  `$ npm run db:migrate`
 
 ### Database seeds
 
-  $ npm run db:seed:all
+  `$ npm run db:seed:all`
 
 ### Run the App
 
 Before running the app export below environment variable:
 
-  $ export DATABASE_ENDPOINT=postgres://username:password@localhost/db_name
+  `$ export DATABASE_ENDPOINT=postgres://username:password@localhost/db_name`
 
 and lastly 
 
-  $ npm start
+  `$ npm start`
 
 If you have docker installed in your system, you can also run directly using docker-compose (with the default environment variables)
 
-  $ docker-compose up
+  `$ docker-compose up`
 
 ### Optional (run linter)
 
-  $ npm run linter
+  `$ npm run linter`
 
 ## CI/Test Environment
 
 For the Continous Integration part you need to export below variables:
 
-  $ export CI_DATABASE_URL=localhost
-  $ export CI_DATABASE_USERNAME=<username>
-  $ export CI_DATABASE_PASSWORD=<password>
-  $ export CI_DATABASE_NAME=<db_name>
-  $ export CI_DATABASE_PORT=<db_port>
+  `$ export CI_DATABASE_URL=localhost`
+  `$ export CI_DATABASE_USERNAME=<username>`
+  `$ export CI_DATABASE_PASSWORD=<password>`
+  `$ export CI_DATABASE_NAME=<db_name>`
+  `$ export CI_DATABASE_PORT=<db_port>`
 
 ### Database Migration for the UnitTest
 
-  $ npm run db:migrate
+  `$ npm run db:migrate`
 
 ### Database seeds for the UnitTest
 
-  $ npm run db:seed:all
+  `$ npm run db:seed:all`
 
 ### Run the Unit Test
 
-  $ npm run test
+  `$ npm run test`
 
+
+# LICENSE
 
 MIT License
 
