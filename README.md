@@ -46,11 +46,11 @@ and lastly
 
   `$ npm start`
 
-If you have docker installed in your system, you can also run directly using docker-compose (with the default environment variables)
+If you have docker installed in your system, you can also run directly using docker-compose (with the default environment variables that are inside the docker-compose.yml file)
 
   `$ docker-compose up`
 
-### Optional (run linter)
+### Optional (run linter) for the CI pipeline
 
   `$ npm run linter`
 
