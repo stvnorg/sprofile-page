@@ -1,8 +1,18 @@
+services:
+  - postgresql
+
 language: node_js
+
 node_js:
   - 13
+
 install:
   - npm install
+
+before_script:
+  - psql -c 'create datatabase test_db;' -U postgres
+  - export CI_DATABASE_ENDPOINT=postgres://postgres@postgresql/test_db
+
 script:
   - npm run lint
   - npm run test
