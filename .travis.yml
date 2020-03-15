@@ -14,7 +14,7 @@ before_script:
   - export CI_DATABASE_URL=postgresql
   - export CI_DATABASE_USERNAME=postgres
   - export CI_DATABASE_NAME=test_db
-  - export CI_DATABASE_ENDPOINT=postgres://postgres:@postgresql/test_db
+  - export CI_DATABASE_ENDPOINT=postgres://postgres@postgresql/test_db
 
 script:
   - npm run lint
