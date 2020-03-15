@@ -54,7 +54,7 @@ If you have docker installed in your system, you can also run directly using doc
 
 ### Optional (run linter) for the CI pipeline
 
-  `$ npm run linter`
+  `$ npm run lint`
 
 ## CI/Test Environment
 
