@@ -1,18 +1,19 @@
 # sprofile-page
 
 [![dependencies Status](https://david-dm.org/stvnorg/sprofile-page/status.svg)](https://david-dm.org/stvnorg/sprofile-page)
-[![Build Status](https://travis-ci.org/stvnorg/sprofile-page.svg?branch=master)](https://travis-ci.org/stvnorg/sprofile-page)
+[![CircleCI](https://circleci.com/gh/stvnorg/sprofile-page.svg?style=svg)](https://circleci.com/gh/stvnorg/sprofile-page)
+
 
 A simple one-page personal site. Built on FastifyJS. Started by [Steven Stevanus](https://github.com/stvnorg).
 Work on-progress, missing the CMS feature
 
 ## Prequisites
-  
+
    ```
    nodejs
    postgresql
    ```
-  
+
 ## Deployment for the Production Environment
 
 ### Environment Variables
@@ -45,7 +46,7 @@ Before running the app export below environment variable:
 
   `$ export DATABASE_ENDPOINT=postgres://username:password@localhost/db_name`
 
-and lastly 
+and lastly
 
   `$ npm start`
 
