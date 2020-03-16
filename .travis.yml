@@ -14,9 +14,7 @@ before_script:
   - export NODE_ENV=test
   - export CI_DATABASE_URL=localhost
   - export CI_DATABASE_USERNAME=postgres
-  - export CI_DATABASE_PASSWORD=''
   - export CI_DATABASE_NAME=test_db
-  - export CI_DATABASE_PORT=5432
   - export CI_DATABASE_ENDPOINT=postgres://postgres@localhost/test_db
 
 script:
