@@ -3,14 +3,28 @@ orbs:
   node: circleci/node@1.1.6
 jobs:
   build-and-test:
+    docker:
+      - image: circleci/postgres:9.6.2-alpine
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: circle-test_db
     executor:
       name: node/default
     steps:
       - checkout
       - node/with-cache:
           steps:
+            - run:
+                command: |
+                  export NODE_ENV=test
+                  export CI_DATABASE_URL=localhost
+                  export CI_DATABASE_USERNAME=root
+                  export CI_DATABASE_NAME=circle-test_db
+                  export CI_DATABASE_ENDPOINT=postgres://root@localhost/circle-test_db
             - run: npm install
             - run: npm run lint
+            - run: npm run db:migrate
+            - run: npm run db:seed:all
             - run: npm run test
 workflows:
     build-and-test:
