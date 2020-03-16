@@ -50,7 +50,7 @@ and lastly
 
   `$ npm start`
 
-If you have docker installed in your system, you can also run directly using docker-compose (with the default environment variables that are inside the docker-compose.yml file)
+If you have docker installed on your system, you can also run directly using docker-compose (with the default environment variables that are inside the docker-compose.yml file)
 
   `$ docker-compose up`
 
@@ -58,7 +58,7 @@ If you have docker installed in your system, you can also run directly using doc
 
   `$ npm run lint`
 
-## CI/Test Environment
+## CI and TestUnit
 
 For the Continous Integration part you need to export below variables:
 
